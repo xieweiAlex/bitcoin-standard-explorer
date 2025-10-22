@@ -20,7 +20,7 @@ const Hero = ({ scrollToContent }) => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-6xl font-title font-bold mb-6 text-title-color">
-            The Bitcoin Standard Explorer
+            The Bitcoin Standard Explorer Test
           </h1>
           <h2 className="text-2xl md:text-3xl font-title mb-2 text-title-color">
             The Decentralized Alternative For Central Banking
