@@ -1,0 +1,36 @@
+/* Additional custom styles beyond Tailwind */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling for Safari */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Bitcoin-themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F7931A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e07c0e;
+}
