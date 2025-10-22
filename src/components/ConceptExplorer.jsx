@@ -23,10 +23,13 @@ const ConceptExplorer = () => {
   };
 
   return (
-    <section className="section py-12">
+    <section className="section py-12" style={{ 
+      backgroundColor: '#f0f4f8',
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%232d3748' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+    }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold mb-6 text-center">Concept Explorer</h2>
-        <p className="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-title font-bold mb-6 text-center">Concept Explorer</h2>
+        <p className="text-center font-description text-description-color mb-12 max-w-3xl mx-auto description">
           Explore the key concepts from The Bitcoin Standard and how they relate to each other.
           Hover over nodes to see brief descriptions and click for more detailed explanations.
         </p>

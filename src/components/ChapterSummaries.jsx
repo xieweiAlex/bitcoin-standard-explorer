@@ -4,9 +4,13 @@ import { chapters } from '../data/chapters';
 
 const ChapterSummaries = () => {
   return (
-    <section className="section py-12">
+    <section className="section py-12 relative" style={{ 
+      backgroundColor: '#f8f9fa',
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f7931a' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")`,
+      backgroundSize: '20px 20px'
+    }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold mb-12 text-center">Chapter Summaries</h2>
+        <h2 className="text-3xl font-title font-bold mb-12 text-center">Chapter Summaries</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {chapters.map((chapter, index) => (
@@ -38,7 +42,7 @@ const ChapterCard = ({ chapter, index }) => {
       >
         <div>
           <span className="text-bitcoin-orange font-bold">Chapter {chapter.id}</span>
-          <h3 className="text-xl font-serif font-bold">{chapter.title}</h3>
+          <h3 className="text-xl font-title font-bold">{chapter.title}</h3>
         </div>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -61,17 +65,17 @@ const ChapterCard = ({ chapter, index }) => {
             className="overflow-hidden"
           >
             <div className="p-4 border-t border-gray-200">
-              <p className="text-gray-700 mb-4">{chapter.summary}</p>
+              <p className="font-content text-content-color mb-4">{chapter.summary}</p>
               
               {chapter.quotes.map((quote, i) => (
-                <blockquote key={i} className="border-l-4 border-bitcoin-orange pl-4 italic text-gray-600 my-4">
+                <blockquote key={i} className="border-l-4 border-bitcoin-orange pl-4 italic font-description text-description-color my-4">
                   "{quote}"
                 </blockquote>
               ))}
               
               <div className="bg-gray-100 p-4 rounded-md mt-4">
-                <h4 className="font-bold text-sm uppercase text-gray-700 mb-2">Takeaway Insight</h4>
-                <p className="text-gray-800">{chapter.takeaway}</p>
+                <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2">Takeaway Insight</h4>
+                <p className="font-content text-content-color">{chapter.takeaway}</p>
               </div>
             </div>
           </motion.div>

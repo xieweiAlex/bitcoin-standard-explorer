@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 const Hero = ({ scrollToContent }) => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-100 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-5">
+      <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-bitcoin-orange"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-bitcoin-orange"></div>
+        {/* Bitcoin pattern background */}
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f7931a' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
       </div>
       
       <div className="container mx-auto px-4 py-16 text-center z-10">
@@ -14,16 +19,16 @@ const Hero = ({ scrollToContent }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-gray-900">
+          <h1 className="text-5xl md:text-6xl font-title font-bold mb-6 text-title-color">
             The Bitcoin Standard Explorer
           </h1>
-          <h2 className="text-2xl md:text-3xl font-serif mb-2 text-gray-900">
-            Understand Sound Money for the Digital Age
+          <h2 className="text-2xl md:text-3xl font-title mb-2 text-title-color">
+            The Decentralized Alternative For Central Banking
           </h2>
         </motion.div>
         
         <motion.p 
-          className="text-xl text-gray-700 max-w-3xl mx-auto mb-12"
+          className="text-xl font-description text-description-color max-w-3xl mx-auto mb-12 description"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}

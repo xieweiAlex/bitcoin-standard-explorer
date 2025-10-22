@@ -2,12 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600;700&display=swap');
+
 body {
-  @apply bg-white text-gray-900;
+  @apply bg-white text-content-color font-content;
 }
 
+/* Title styles */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-serif;
+  @apply font-title text-title-color;
+}
+
+/* Description styles */
+.description {
+  @apply font-description text-description-color;
+}
+
+/* Quiz styles */
+.quiz-section {
+  @apply font-quiz text-quiz-color bg-quiz-bg rounded-xl p-6;
+}
+
+.quiz-question {
+  @apply font-quiz font-semibold text-quiz-color;
+}
+
+.quiz-option {
+  @apply font-quiz text-content-color hover:text-quiz-accent transition-colors;
 }
 
 .container {
