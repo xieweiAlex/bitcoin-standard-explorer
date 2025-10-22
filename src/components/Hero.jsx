@@ -19,10 +19,10 @@ const Hero = ({ scrollToContent }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl font-title font-bold mb-6 text-title-color">
-            The Bitcoin Standard Explorer Test
+          <h1 className="text-5xl md:text-6xl font-title font-bold mb-6 text-title-color text-center">
+            The Bitcoin Standard Explorer
           </h1>
-          <h2 className="text-2xl md:text-3xl font-title mb-2 text-title-color">
+          <h2 className="text-2xl md:text-3xl font-title mb-2 text-title-color text-center">
             The Decentralized Alternative For Central Banking
           </h2>
         </motion.div>

@@ -34,20 +34,21 @@ const ConceptExplorer = () => {
           Hover over nodes to see brief descriptions and click for more detailed explanations.
         </p>
 
-        <div className="relative mb-16">
-          {/* Hard Money Path */}
-          <FlowPath 
-            concepts={hardMoneyPath} 
-            pathColor="bg-green-500" 
-            onNodeClick={handleNodeClick}
-            onNodeHover={setHoveredConcept}
-            hoveredConcept={hoveredConcept}
-            className="mb-16"
-          />
-          
-          {/* Soft Money Path */}
-          <FlowPath 
-            concepts={softMoneyPath} 
+        <div className="flex flex-col items-center mb-16">
+          <div className="max-w-4xl w-full">
+            {/* Hard Money Path */}
+            <FlowPath 
+              concepts={hardMoneyPath} 
+              pathColor="bg-green-500" 
+              onNodeClick={handleNodeClick}
+              onNodeHover={setHoveredConcept}
+              hoveredConcept={hoveredConcept}
+              className="mb-16"
+            />
+            
+            {/* Soft Money Path */}
+            <FlowPath 
+              concepts={softMoneyPath} 
             pathColor="bg-red-500" 
             onNodeClick={handleNodeClick}
             onNodeHover={setHoveredConcept}
@@ -63,6 +64,7 @@ const ConceptExplorer = () => {
             onNodeHover={setHoveredConcept}
             hoveredConcept={hoveredConcept}
           />
+          </div>
         </div>
 
         <AnimatePresence>
@@ -73,21 +75,21 @@ const ConceptExplorer = () => {
               exit={{ opacity: 0, y: 20 }}
               className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-serif font-bold">{selectedConcept.title}</h3>
+              <div className="flex flex-col items-center mb-4 text-center">
+                <h3 className="text-xl font-serif font-bold mb-2">{selectedConcept.title}</h3>
                 <button 
                   onClick={() => setSelectedConcept(null)}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-gray-700 absolute top-4 right-4"
                 >
                   ✕
                 </button>
               </div>
-              <p className="text-gray-700 mb-4">{selectedConcept.explanation}</p>
+              <p className="text-gray-700 mb-4 text-center">{selectedConcept.explanation}</p>
               
               {selectedConcept.connections.length > 0 && (
-                <div>
+                <div className="text-center">
                   <h4 className="font-bold text-sm uppercase text-gray-700 mb-2">Related Concepts</h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {selectedConcept.connections.map(connectionId => {
                       const connectedConcept = concepts.find(c => c.id === connectionId);
                       return (
@@ -113,11 +115,13 @@ const ConceptExplorer = () => {
 
 const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcept, className = "" }) => {
   return (
-    <div className={`flex justify-between items-center relative ${className}`}>
+    <div className={`flex flex-col md:flex-row justify-center items-center relative ${className}`}>
       {/* Connecting Line */}
-      <div className={`absolute top-1/2 left-0 right-0 h-1 ${pathColor} transform -translate-y-1/2`}></div>
+      <div className={`absolute top-1/2 left-0 right-0 h-1 ${pathColor} transform -translate-y-1/2 hidden md:block`}></div>
+      <div className={`absolute left-1/2 top-0 bottom-0 w-1 ${pathColor} transform -translate-x-1/2 md:hidden`}></div>
       
       {/* Concept Nodes */}
+      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-4">
       {concepts.map((concept, index) => (
         <motion.div
           key={concept.id}
@@ -147,6 +151,7 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
           </div>
         </motion.div>
       ))}
+      </div>
     </div>
   );
 };

@@ -46,8 +46,9 @@ const KnowledgeCheck = () => {
           Test your understanding of key concepts from The Bitcoin Standard.
         </p>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          {!quizCompleted ? (
+        <div className="flex justify-center">
+          <div className="max-w-2xl w-full bg-white rounded-lg shadow-lg p-8">
+            {!quizCompleted ? (
             <>
               <div className="mb-8 quiz-section">
                 <div className="flex justify-between text-sm text-gray-500 mb-2">
@@ -126,6 +127,7 @@ const KnowledgeCheck = () => {
               </button>
             </div>
           )}
+          </div>
         </div>
       </div>
     </section>

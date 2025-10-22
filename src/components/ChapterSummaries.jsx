@@ -12,10 +12,12 @@ const ChapterSummaries = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-title font-bold mb-12 text-center">Chapter Summaries</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {chapters.map((chapter, index) => (
-            <ChapterCard key={chapter.id} chapter={chapter} index={index} />
-          ))}
+        <div className="flex flex-col items-center">
+          <div className="max-w-4xl w-full">
+            {chapters.map((chapter, index) => (
+              <ChapterCard key={chapter.id} chapter={chapter} index={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -37,10 +39,10 @@ const ChapterCard = ({ chapter, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div 
-        className="p-4 cursor-pointer flex justify-between items-center bg-white hover:bg-gray-50"
+        className="p-4 cursor-pointer flex flex-col justify-center items-center bg-white hover:bg-gray-50 text-center"
         onClick={toggleExpand}
       >
-        <div>
+        <div className="mb-2">
           <span className="text-bitcoin-orange font-bold">Chapter {chapter.id}</span>
           <h3 className="text-xl font-title font-bold">{chapter.title}</h3>
         </div>
@@ -64,17 +66,17 @@ const ChapterCard = ({ chapter, index }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="p-4 border-t border-gray-200">
+            <div className="p-4 border-t border-gray-200 text-center">
               <p className="font-content text-content-color mb-4">{chapter.summary}</p>
               
               {chapter.quotes.map((quote, i) => (
-                <blockquote key={i} className="border-l-4 border-bitcoin-orange pl-4 italic font-description text-description-color my-4">
+                <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4">
                   "{quote}"
                 </blockquote>
               ))}
               
               <div className="bg-gray-100 p-4 rounded-md mt-4">
-                <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2">Takeaway Insight</h4>
+                <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2 text-center">Takeaway Insight</h4>
                 <p className="font-content text-content-color">{chapter.takeaway}</p>
               </div>
             </div>
