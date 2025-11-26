@@ -34,6 +34,9 @@ const Hero = ({ scrollToContent }) => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           An interactive guide to the principles, arguments, and ideas behind Saifedean Ammous's groundbreaking book.
+        <br />
+        <span className="text-red-600 font-bold text-2xl md:text-3xl">Only chapter 3,4 are available for now.</span>
+        <br />
         </motion.p>
         
         <motion.button

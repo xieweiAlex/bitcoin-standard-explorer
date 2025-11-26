@@ -1,34 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600&family=Open+Sans:wght@400;600&family=Montserrat:wght@500;600;700&display=swap');
 
+@import "tailwindcss";
+
+@theme {
+  --color-bitcoin-orange: #F7931A;
+  --color-title-color: #2D3748;
+  --color-content-color: #4A5568;
+  --color-description-color: #718096;
+  --color-quiz-color: #553C9A;
+  --color-quiz-bg: #EBF4FF;
+  --color-quiz-accent: #805AD5;
+
+  --font-title: Merriweather, Georgia, serif;
+  --font-content: Inter, system-ui, sans-serif;
+  --font-description: Open Sans, system-ui, sans-serif;
+  --font-quiz: Montserrat, system-ui, sans-serif;
+}
+
 body {
-  @apply bg-white text-content-color font-content;
+  background-color: #ffffff;
+  color: var(--color-content-color);
+  font-family: var(--font-content);
 }
 
 /* Title styles */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-title text-title-color text-center;
+  font-family: var(--font-title);
+  color: var(--color-title-color);
+  text-align: center;
 }
 
 /* Description styles */
 .description {
-  @apply font-description text-description-color;
+  font-family: var(--font-description);
+  color: var(--color-description-color);
 }
 
 /* Quiz styles */
 .quiz-section {
-  @apply font-quiz text-quiz-color bg-quiz-bg rounded-xl p-6;
+  font-family: var(--font-quiz);
+  color: var(--color-quiz-color);
+  background-color: var(--color-quiz-bg);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
 }
 
 .quiz-question {
-  @apply font-quiz font-semibold text-quiz-color;
+  font-family: var(--font-quiz);
+  font-weight: 600;
+  color: var(--color-quiz-color);
 }
 
 .quiz-option {
-  @apply font-quiz text-content-color hover:text-quiz-accent transition-colors;
+  font-family: var(--font-quiz);
+  color: var(--color-content-color);
+  transition: color 150ms;
+}
+.quiz-option:hover {
+  color: var(--color-quiz-accent);
 }
 
 .container {
@@ -44,7 +73,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  @apply bg-bitcoin-orange text-white hover:bg-opacity-90;
+  background-color: var(--color-bitcoin-orange);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  opacity: 0.9;
 }
 
 .card {
