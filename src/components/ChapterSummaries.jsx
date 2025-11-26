@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { chapters } from '../data/chapters';
 
@@ -26,9 +27,13 @@ const ChapterSummaries = () => {
 
 const ChapterCard = ({ chapter, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
   
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
+  };
+  const goToDetail = () => {
+    navigate(`/chapters/${chapter.id}`);
   };
   
   return (
@@ -40,21 +45,13 @@ const ChapterCard = ({ chapter, index }) => {
     >
       <div 
         className="p-4 cursor-pointer flex flex-col justify-center items-center bg-white hover:bg-gray-50 text-center"
-        onClick={toggleExpand}
+        onClick={goToDetail}
       >
-        <div className="mb-2">
-          <span className="text-bitcoin-orange font-bold">Chapter {chapter.id}</span>
-          <h3 className="text-xl font-title font-bold">{chapter.title}</h3>
+        <div className="mb-2 w-full">
+          <span className="text-bitcoin-orange font-bold block text-center">Chapter {chapter.id}</span>
+          <h3 className="text-xl font-title font-bold text-center">{chapter.title}</h3>
         </div>
-        <motion.div
-          animate={{ rotate: isExpanded ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="text-bitcoin-orange"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </motion.div>
+        <div className="text-bitcoin-orange mt-2 text-sm">Click to view details →</div>
       </div>
       
       <AnimatePresence>

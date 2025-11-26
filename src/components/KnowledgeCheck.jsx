@@ -55,7 +55,7 @@ const KnowledgeCheck = () => {
                   <span>Question {currentQuestion + 1} of {quizData.length}</span>
                   <span>Score: {score}/{quizData.length}</span>
                 </div>
-                <h3 className="text-xl font-quiz font-bold mb-6 quiz-question">{quizData[currentQuestion].question}</h3>
+                <h3 className="text-xl font-quiz font-bold mb-6 quiz-question text-center">{quizData[currentQuestion].question}</h3>
                 
                 <div className="space-y-3">
                   {quizData[currentQuestion].options.map((option, index) => (

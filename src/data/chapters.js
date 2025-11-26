@@ -1,3 +1,6 @@
+import { chapter4KeyIdeas } from './chapterKeyIdeas/chapter4';
+import { chapter3KeyIdeas } from './chapterKeyIdeas/chapter3';
+
 export const chapters = [
   {
     id: 1,
@@ -24,7 +27,8 @@ export const chapters = [
     quotes: [
       "Gold's monetary role throughout human history has come from it having the highest stock-to-flow ratio among all commodities."
     ],
-    takeaway: "Gold became the global standard for money because of its unmatched stock-to-flow ratio, making it the hardest form of money available."
+    takeaway: "Gold became the global standard for money because of its unmatched stock-to-flow ratio, making it the hardest form of money available.",
+    keyIdeas: chapter3KeyIdeas
   },
   {
     id: 4,
@@ -33,7 +37,8 @@ export const chapters = [
     quotes: [
       "The twentieth century was the century of unsound money and the omnipotent state, as a market choice in money was denied by government diktat, and government-issued paper money was forced on people with the threat of violence."
     ],
-    takeaway: "The shift from gold to fiat currency removed natural constraints on government spending and monetary expansion."
+    takeaway: "The shift from gold to fiat currency removed natural constraints on government spending and monetary expansion.",
+    keyIdeas: chapter4KeyIdeas
   },
   {
     id: 5,

@@ -10,7 +10,7 @@ body {
 
 /* Title styles */
 h1, h2, h3, h4, h5, h6 {
-  @apply font-title text-title-color;
+  @apply font-title text-title-color text-center;
 }
 
 /* Description styles */
