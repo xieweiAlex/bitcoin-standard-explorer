@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { chapters } from '../data/chapters';
 
 const ChapterSummaries = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="section py-12 relative" style={{ 
       backgroundColor: '#f8f9fa',
@@ -11,7 +14,7 @@ const ChapterSummaries = () => {
       backgroundSize: '20px 20px'
     }}>
       <div className="w-full mx-auto px-4">
-        <h2 className="text-3xl font-title font-bold mb-3 text-center">Chapter Summaries</h2>
+        <h2 className="text-3xl font-title font-bold mb-3 text-center">{t('chapters.title')}</h2>
         
         <div className="mx-auto w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
@@ -28,6 +31,7 @@ const ChapterSummaries = () => {
 const ChapterCard = ({ chapter, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -48,10 +52,10 @@ const ChapterCard = ({ chapter, index }) => {
         onClick={goToDetail}
       >
         <div className="mb-2 w-full">
-          <span className="text-bitcoin-orange font-bold block text-center">Chapter {chapter.id}</span>
+          <span className="text-bitcoin-orange font-bold block text-center">{t('chapters.chapter')} {chapter.id}</span>
           <h3 className="text-xl font-title font-bold text-center">{chapter.title}</h3>
         </div>
-        <div className="text-bitcoin-orange mt-2 text-sm">Click to view details →</div>
+        <div className="text-bitcoin-orange mt-2 text-sm">{t('chapters.clickToView')}</div>
       </div>
       
       <AnimatePresence>
@@ -64,17 +68,17 @@ const ChapterCard = ({ chapter, index }) => {
             className="overflow-hidden"
           >
             <div className="p-4 border-t border-gray-200 text-center">
-              <p className="font-content text-content-color mb-4">{chapter.summary}</p>
+              <p className="font-content text-content-color mb-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
               
               {chapter.quotes.map((quote, i) => (
-                <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4">
+                <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                   "{quote}"
                 </blockquote>
               ))}
               
               <div className="bg-gray-100 p-4 rounded-md mt-4">
-                <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2 text-center">Takeaway Insight</h4>
-                <p className="font-content text-content-color">{chapter.takeaway}</p>
+                <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2 text-center">{t('chapters.takeawayInsight')}</h4>
+                <p className="font-content text-content-color break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.takeaway}</p>
               </div>
             </div>
           </motion.div>

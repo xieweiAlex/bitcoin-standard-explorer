@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Hero = ({ scrollToContent }) => {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-100 relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-10">
@@ -20,10 +23,10 @@ const Hero = ({ scrollToContent }) => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-6xl font-title font-bold mb-6 text-title-color text-center">
-            The Bitcoin Standard Explorer
+            {t('hero.title')}
           </h1>
           <h2 className="text-2xl md:text-3xl font-title mb-2 text-title-color text-center">
-            The Decentralized Alternative For Central Banking
+            {t('hero.subtitle')}
           </h2>
         </motion.div>
         
@@ -33,9 +36,9 @@ const Hero = ({ scrollToContent }) => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          An interactive guide to the principles, arguments, and ideas behind Saifedean Ammous's groundbreaking book.
+          {t('hero.description')}
         <br />
-        <span className="text-red-600 font-bold text-2xl md:text-3xl">Only chapter 3,4 are available for now.</span>
+        <span className="text-red-600 font-bold text-2xl md:text-3xl">{t('hero.note')}</span>
         <br />
         </motion.p>
         
@@ -48,7 +51,7 @@ const Hero = ({ scrollToContent }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Start Exploring
+          {t('hero.startButton')}
         </motion.button>
       </div>
     </section>

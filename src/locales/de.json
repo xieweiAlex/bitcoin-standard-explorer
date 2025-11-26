@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "title": "Der Bitcoin Standard Explorer",
+    "subtitle": "Die dezentrale Alternative für Zentralbanken",
+    "description": "Ein interaktiver Leitfaden zu den Prinzipien, Argumenten und Ideen hinter Saifedean Ammous' bahnbrechendem Buch.",
+    "note": "Nur Kapitel 3 und 4 sind derzeit verfügbar.",
+    "startButton": "Erkunden beginnen"
+  },
+  "navigation": {
+    "byChapter": "Nach Kapitel",
+    "byConcept": "Nach Konzept"
+  },
+  "chapters": {
+    "title": "Kapitel-Zusammenfassungen",
+    "chapter": "Kapitel",
+    "clickToView": "Klicken Sie für Details →",
+    "takeawayInsight": "Wesentliche Erkenntnis"
+  },
+  "concepts": {
+    "title": "Konzept-Explorer",
+    "description": "Erkunden Sie die Schlüsselkonzepte aus The Bitcoin Standard und wie sie miteinander zusammenhängen. Bewegen Sie die Maus über die Knoten, um kurze Beschreibungen zu sehen, und klicken Sie für detailliertere Erklärungen.",
+    "relatedConcepts": "Verwandte Konzepte"
+  },
+  "knowledgeCheck": {
+    "title": "Wissensprüfung",
+    "description": "Testen Sie Ihr Verständnis der Schlüsselkonzepte aus The Bitcoin Standard.",
+    "question": "Frage",
+    "of": "von",
+    "score": "Punkte",
+    "explanation": "Erklärung:",
+    "nextQuestion": "Nächste Frage",
+    "seeResults": "Ergebnisse anzeigen",
+    "completed": "Quiz abgeschlossen!",
+    "yourScore": "Ihre Punktzahl",
+    "outOf": "von",
+    "perfectScore": "Perfekte Punktzahl! Sie haben ein ausgezeichnetes Verständnis von The Bitcoin Standard.",
+    "greatJob": "Großartige Arbeit! Sie haben ein solides Verständnis von The Bitcoin Standard.",
+    "reviewNeeded": "Sie sollten vielleicht einige Konzepte aus The Bitcoin Standard überprüfen.",
+    "retakeQuiz": "Quiz wiederholen"
+  },
+  "chapterDetail": {
+    "chapter": "Kapitel",
+    "keyIdeas": "Schlüsselideen",
+    "backToExplorer": "← Zurück zum Explorer",
+    "notFound": "Kapitel nicht gefunden",
+    "notFoundMessage": "Wir konnten das gesuchte Kapitel nicht finden.",
+    "supportingArguments": "Unterstützende Argumente werden hinzugefügt.",
+    "keyIdeasComing": "Schlüsselideen werden für dieses Kapitel bereitgestellt."
+  },
+  "footer": {
+    "description": "Diese Seite ist eine pädagogische Zusammenfassung, inspiriert von",
+    "bookTitle": "The Bitcoin Standard",
+    "by": "von",
+    "author": "Saifedean Ammous",
+    "visitBookSite": "Besuchen Sie die offizielle Buchseite",
+    "copyright": "Bitcoin Standard Explorer"
+  },
+  "language": {
+    "switch": "Sprache wechseln",
+    "english": "English",
+    "german": "Deutsch"
+  }
+}
+

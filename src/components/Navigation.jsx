@@ -1,22 +1,29 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navigation = ({ activeTab, setActiveTab }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex justify-center">
-          <div className="flex space-x-8">
-            <TabButton 
-              active={activeTab === 'chapters'} 
-              onClick={() => setActiveTab('chapters')}
-              label="By Chapter"
-            />
-            <TabButton 
-              active={activeTab === 'concepts'} 
-              onClick={() => setActiveTab('concepts')}
-              label="By Concept"
-            />
+        <div className="flex justify-between items-center">
+          <div className="flex justify-center flex-1">
+            <div className="flex space-x-8">
+              <TabButton 
+                active={activeTab === 'chapters'} 
+                onClick={() => setActiveTab('chapters')}
+                label={t('navigation.byChapter')}
+              />
+              <TabButton 
+                active={activeTab === 'concepts'} 
+                onClick={() => setActiveTab('concepts')}
+                label={t('navigation.byConcept')}
+              />
+            </div>
           </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </div>

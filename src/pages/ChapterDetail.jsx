@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { chapters } from '../data/chapters';
 
 // Normalize colon-delimited strings into nested nodes
@@ -36,16 +37,16 @@ const ArgumentList = ({ items, level = 0 }) => {
   const normalized = normalizeArguments(items);
   const indentClass = level === 0 ? 'mt-3' : 'mt-2 ml-4 sm:ml-6';
   return (
-    <ul className={`list-disc list-inside text-content-color ${indentClass} text-sm sm:text-base text-left`}>
+    <ul className={`list-disc list-inside text-content-color ${indentClass} text-sm sm:text-base text-left break-words overflow-visible`} style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
       {normalized.map((item, idx) => {
         if (typeof item === 'string') {
-          return <li key={idx} className="mb-1">{item}</li>;
+          return <li key={idx} className="mb-1 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{item}</li>;
         }
         if (item && typeof item === 'object') {
           const text = item.text || '';
           const children = item.children || [];
           return (
-            <li key={idx} className="mb-1">
+            <li key={idx} className="mb-1 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
               {text}
               {Array.isArray(children) && children.length > 0 && (
                 <ArgumentList items={children} level={level + 1} />
@@ -61,6 +62,7 @@ const ArgumentList = ({ items, level = 0 }) => {
 
 const ChapterDetail = () => {
   const { id } = useParams();
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(new Set());
 
   const chapter = useMemo(() => {
@@ -71,9 +73,9 @@ const ChapterDetail = () => {
     return (
       <section className="section py-12">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-title font-bold mb-6">Chapter Not Found</h2>
-          <p className="mb-6">We couldn't find the chapter you were looking for.</p>
-          <Link to="/" className="btn btn-primary">← Back to Explorer</Link>
+          <h2 className="text-3xl font-title font-bold mb-6">{t('chapterDetail.notFound')}</h2>
+          <p className="mb-6">{t('chapterDetail.notFoundMessage')}</p>
+          <Link to="/" className="btn btn-primary">{t('chapterDetail.backToExplorer')}</Link>
         </div>
       </section>
     );
@@ -90,16 +92,16 @@ const ChapterDetail = () => {
         <div className="max-w-5xl mx-auto">
           {/* Hero header */}
           <div className="mb-10 text-center">
-            <span className="inline-block px-3 py-1 bg-bitcoin-orange text-white rounded-full text-xs sm:text-sm font-bold mb-3">Chapter {chapter.id}</span>
+            <span className="inline-block px-3 py-1 bg-bitcoin-orange text-white rounded-full text-xs sm:text-sm font-bold mb-3">{t('chapterDetail.chapter')} {chapter.id}</span>
             <h2 className="font-title font-bold text-2xl sm:text-3xl lg:text-4xl text-title-color mb-2">{chapter.title}</h2>
             <div className="bg-white/70 backdrop-blur rounded-xl shadow p-5 sm:p-6 lg:p-8">
-              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl">{chapter.summary}</p>
+              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
             </div>
           </div>
 
           {/* Key Ideas grid */}
           <div>
-            <h3 className="text-center text-title-color font-title font-bold text-xl sm:text-2xl lg:text-3xl mb-6">Key Ideas</h3>
+            <h3 className="text-center text-title-color font-title font-bold text-xl sm:text-2xl lg:text-3xl mb-6">{t('chapterDetail.keyIdeas')}</h3>
             {Array.isArray(chapter.keyIdeas) && chapter.keyIdeas.length > 0 ? (
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center md:justify-items-center mx-auto max-w-6xl">
                 {chapter.keyIdeas.map((idea, idx) => (
@@ -145,7 +147,7 @@ const ChapterDetail = () => {
                           {Array.isArray(idea.arguments) && idea.arguments.length > 0 ? (
                             <ArgumentList items={idea.arguments} />
                           ) : (
-                            <p className="text-description-color mt-3 text-sm text-left">Supporting arguments will be added.</p>
+                            <p className="text-description-color mt-3 text-sm text-left">{t('chapterDetail.supportingArguments')}</p>
                           )}
                         </motion.div>
                       )}
@@ -154,12 +156,12 @@ const ChapterDetail = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-description-color text-center">Key ideas will be provided for this chapter.</p>
+              <p className="text-description-color text-center">{t('chapterDetail.keyIdeasComing')}</p>
             )}
           </div>
 
           <div className="mt-10 text-center">
-            <Link to="/" className="btn btn-primary">← Back to Explorer</Link>
+            <Link to="/" className="btn btn-primary">{t('chapterDetail.backToExplorer')}</Link>
           </div>
         </div>
       </div>
