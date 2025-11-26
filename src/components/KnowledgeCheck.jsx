@@ -63,7 +63,7 @@ const KnowledgeCheck = () => {
                       key={index}
                       onClick={() => !selectedAnswer && handleAnswerSelect(option)}
                       disabled={selectedAnswer !== null}
-                      className={`w-full text-left p-4 rounded-md border transition-colors quiz-option ${
+                      className={`w-full text-left p-4 rounded-md border transition-colors quiz-option break-words overflow-visible ${
                         selectedAnswer === option
                           ? option === quizData[currentQuestion].correctAnswer
                             ? 'bg-green-100 border-green-500'
@@ -72,6 +72,7 @@ const KnowledgeCheck = () => {
                           ? 'bg-green-100 border-green-500'
                           : 'border-gray-300 hover:border-quiz-accent'
                       }`}
+                      style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
                     >
                       {option}
                     </button>
@@ -89,7 +90,7 @@ const KnowledgeCheck = () => {
                   >
                     <div className="bg-gray-100 p-4 rounded-md">
                       <h4 className="font-bold mb-2">Explanation:</h4>
-                      <p>{quizData[currentQuestion].explanation}</p>
+                      <p className="break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{quizData[currentQuestion].explanation}</p>
                     </div>
                   </motion.div>
                 )}

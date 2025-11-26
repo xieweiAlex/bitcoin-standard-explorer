@@ -64,17 +64,17 @@ const ChapterCard = ({ chapter, index }) => {
             className="overflow-hidden"
           >
             <div className="p-4 border-t border-gray-200 text-center">
-              <p className="font-content text-content-color mb-4">{chapter.summary}</p>
+              <p className="font-content text-content-color mb-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
               
               {chapter.quotes.map((quote, i) => (
-                <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4">
+                <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
                   "{quote}"
                 </blockquote>
               ))}
               
               <div className="bg-gray-100 p-4 rounded-md mt-4">
                 <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2 text-center">Takeaway Insight</h4>
-                <p className="font-content text-content-color">{chapter.takeaway}</p>
+                <p className="font-content text-content-color break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.takeaway}</p>
               </div>
             </div>
           </motion.div>

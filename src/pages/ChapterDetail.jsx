@@ -36,16 +36,16 @@ const ArgumentList = ({ items, level = 0 }) => {
   const normalized = normalizeArguments(items);
   const indentClass = level === 0 ? 'mt-3' : 'mt-2 ml-4 sm:ml-6';
   return (
-    <ul className={`list-disc list-inside text-content-color ${indentClass} text-sm sm:text-base text-left`}>
+    <ul className={`list-disc list-inside text-content-color ${indentClass} text-sm sm:text-base text-left break-words overflow-visible`} style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
       {normalized.map((item, idx) => {
         if (typeof item === 'string') {
-          return <li key={idx} className="mb-1">{item}</li>;
+          return <li key={idx} className="mb-1 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{item}</li>;
         }
         if (item && typeof item === 'object') {
           const text = item.text || '';
           const children = item.children || [];
           return (
-            <li key={idx} className="mb-1">
+            <li key={idx} className="mb-1 break-words" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
               {text}
               {Array.isArray(children) && children.length > 0 && (
                 <ArgumentList items={children} level={level + 1} />
@@ -93,7 +93,7 @@ const ChapterDetail = () => {
             <span className="inline-block px-3 py-1 bg-bitcoin-orange text-white rounded-full text-xs sm:text-sm font-bold mb-3">Chapter {chapter.id}</span>
             <h2 className="font-title font-bold text-2xl sm:text-3xl lg:text-4xl text-title-color mb-2">{chapter.title}</h2>
             <div className="bg-white/70 backdrop-blur rounded-xl shadow p-5 sm:p-6 lg:p-8">
-              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl">{chapter.summary}</p>
+              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
             </div>
           </div>
 
