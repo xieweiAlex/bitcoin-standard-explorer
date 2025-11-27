@@ -83,3 +83,15 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300;
 }
+
+/* Text overflow prevention */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Ensure text is never cut off */
+p, span, div, li, blockquote, button {
+  overflow: visible;
+  text-overflow: clip;
+}

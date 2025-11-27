@@ -84,7 +84,7 @@ const ConceptExplorer = () => {
                   ✕
                 </button>
               </div>
-              <p className="text-gray-700 mb-4 text-center">{selectedConcept.explanation}</p>
+              <p className="text-gray-700 mb-4 text-center break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{selectedConcept.explanation}</p>
               
               {selectedConcept.connections.length > 0 && (
                 <div className="text-center">
@@ -117,40 +117,52 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
   return (
     <div className={`flex flex-col md:flex-row justify-center items-center relative ${className}`}>
       {/* Connecting Line */}
-      <div className={`absolute top-1/2 left-0 right-0 h-1 ${pathColor} transform -translate-y-1/2 hidden md:block`}></div>
-      <div className={`absolute left-1/2 top-0 bottom-0 w-1 ${pathColor} transform -translate-x-1/2 md:hidden`}></div>
+      <div className={`absolute top-1/2 left-0 right-0 h-1 ${pathColor} transform -translate-y-1/2 hidden md:block z-0`}></div>
+      <div className={`absolute left-1/2 top-0 bottom-0 w-1 ${pathColor} transform -translate-x-1/2 md:hidden z-0`}></div>
       
       {/* Concept Nodes */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-4">
-      {concepts.map((concept, index) => (
-        <motion.div
-          key={concept.id}
-          className="relative z-10"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
-          <div 
-            className={`relative ${hoveredConcept?.id === concept.id ? 'z-20' : 'z-10'}`}
-            onMouseEnter={() => onNodeHover(concept)}
-            onMouseLeave={() => onNodeHover(null)}
+      <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-4 relative">
+      {concepts.map((concept, index) => {
+        const isHovered = hoveredConcept?.id === concept.id;
+        return (
+          <motion.div
+            key={concept.id}
+            className="relative"
+            style={{ zIndex: isHovered ? 50 : 10 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <button
-              onClick={() => onNodeClick(concept)}
-              className={`w-32 h-32 rounded-full flex items-center justify-center text-white font-medium text-center p-2 transition-all duration-300 ${pathColor} hover:shadow-lg transform hover:scale-105`}
+            <div 
+              className="relative"
+              onMouseEnter={() => onNodeHover(concept)}
+              onMouseLeave={() => onNodeHover(null)}
             >
-              {concept.title}
-            </button>
-            
-            {/* Tooltip */}
-            {hoveredConcept?.id === concept.id && (
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md p-3 w-48 text-sm z-30">
-                {concept.tooltip}
-              </div>
-            )}
-          </div>
-        </motion.div>
-      ))}
+              <button
+                onClick={() => onNodeClick(concept)}
+                className={`min-w-32 min-h-32 w-auto h-auto px-4 py-4 rounded-full flex items-center justify-center text-white font-medium text-center p-2 transition-all duration-300 ${pathColor} hover:shadow-lg transform hover:scale-105 break-words overflow-visible`}
+                style={{ maxWidth: '200px', wordWrap: 'break-word' }}
+              >
+                <span className="text-sm leading-tight">{concept.title}</span>
+              </button>
+              
+              {/* Tooltip */}
+              {isHovered && (
+                <div 
+                  className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md p-3 w-48 text-sm pointer-events-none break-words overflow-visible" 
+                  style={{ 
+                    maxWidth: '300px', 
+                    wordWrap: 'break-word',
+                    zIndex: 100
+                  }}
+                >
+                  {concept.tooltip}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        );
+      })}
       </div>
     </div>
   );
