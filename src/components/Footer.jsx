@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gray-900 text-white py-8" style={{
       backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f7931a' fill-opacity='0.15'%3E%3Cpath d='M30 30c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10zm0-5c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -8,7 +11,7 @@ const Footer = () => {
     }}>
       <div className="container mx-auto px-4 text-center">
         <p className="mb-4">
-          This site is an educational summary inspired by <span className="font-serif italic">The Bitcoin Standard</span> by Saifedean Ammous.
+          {t('footer.description')} <span className="font-serif italic">{t('footer.bookTitle')}</span> {t('footer.by')} {t('footer.author')}.
         </p>
         <a 
           href="https://saifedean.com/thebitcoinstandard/" 
@@ -16,10 +19,10 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="text-bitcoin-orange hover:underline"
         >
-          Visit the official book site
+          {t('footer.visitBookSite')}
         </a>
         <p className="mt-6 text-sm text-gray-400">
-          © {new Date().getFullYear()} Bitcoin Standard Explorer
+          © {new Date().getFullYear()} {t('footer.copyright')}
         </p>
       </div>
     </footer>
