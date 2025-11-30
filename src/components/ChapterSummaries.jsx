@@ -33,6 +33,19 @@ const ChapterCard = ({ chapter, index }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   
+  // Helper function to get translated chapter
+  const getTranslatedChapter = (chapter) => {
+    const translationKey = `chapters.chapter${chapter.id}`;
+    return {
+      ...chapter,
+      title: t(`${translationKey}.title`, { defaultValue: chapter.title }),
+      summary: t(`${translationKey}.summary`, { defaultValue: chapter.summary }),
+      takeaway: t(`${translationKey}.takeaway`, { defaultValue: chapter.takeaway })
+    };
+  };
+  
+  const translatedChapter = getTranslatedChapter(chapter);
+  
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -53,7 +66,7 @@ const ChapterCard = ({ chapter, index }) => {
       >
         <div className="mb-2 w-full">
           <span className="text-bitcoin-orange font-bold block text-center">{t('chapters.chapter')} {chapter.id}</span>
-          <h3 className="text-xl font-title font-bold text-center">{chapter.title}</h3>
+          <h3 className="text-xl font-title font-bold text-center">{translatedChapter.title}</h3>
         </div>
         <div className="text-bitcoin-orange mt-2 text-sm">{t('chapters.clickToView')}</div>
       </div>
@@ -68,7 +81,7 @@ const ChapterCard = ({ chapter, index }) => {
             className="overflow-hidden"
           >
             <div className="p-4 border-t border-gray-200 text-center">
-              <p className="font-content text-content-color mb-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
+              <p className="font-content text-content-color mb-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{translatedChapter.summary}</p>
               
               {chapter.quotes.map((quote, i) => (
                 <blockquote key={i} className="border-t-4 border-bitcoin-orange pt-4 italic font-description text-description-color my-4 break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>
@@ -78,7 +91,7 @@ const ChapterCard = ({ chapter, index }) => {
               
               <div className="bg-gray-100 p-4 rounded-md mt-4">
                 <h4 className="font-title font-bold text-sm uppercase text-title-color mb-2 text-center">{t('chapters.takeawayInsight')}</h4>
-                <p className="font-content text-content-color break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.takeaway}</p>
+                <p className="font-content text-content-color break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{translatedChapter.takeaway}</p>
               </div>
             </div>
           </motion.div>
