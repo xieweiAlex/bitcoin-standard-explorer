@@ -62,6 +62,13 @@ bitcoin-standard-explorer/
 - Hero banner
   - Notice line styled larger, bold, and red.
 
+## Internationalization (i18n)
+- Enabled via `i18next` + `react-i18next` with browser language detection.
+- Languages: `en`, `de` in `src/locales/`; config loaded in `src/main.jsx` from `src/i18n/config.js`.
+- Use: `const { t, i18n } = useTranslation();` then `t('key')`; switch with `i18n.changeLanguage('de')`.
+- Add language: create `src/locales/<lang>.json` and register it in `src/i18n/config.js`.
+- Maintain translations: `npm run translate:check` generates `translation-report.json` (missing keys).
+
 ## Styling Setup (Tailwind v4 style)
 - Global CSS uses the new import style:
   ```css
