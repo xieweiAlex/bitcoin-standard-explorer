@@ -70,5 +70,3 @@ If you prefer manual translation:
 2. Check `translation-report.json` for missing keys
 3. Manually add translations to `src/locales/de.json`
 4. Run the script again to verify
-
-
