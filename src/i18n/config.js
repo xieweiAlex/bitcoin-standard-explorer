@@ -17,16 +17,17 @@ i18n
         translation: deTranslations
       }
     },
+    lng: 'en',  // Standardsprache auf Englisch (falls nichts gespeichert ist)
     fallbackLng: 'en',
     debug: false,
     interpolation: {
       escapeValue: false
     },
     detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
+      order: ['localStorage'],  // Nur localStorage, keine Browser-Erkennung mehr
+      caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng'
     }
   });
 
 export default i18n;
-

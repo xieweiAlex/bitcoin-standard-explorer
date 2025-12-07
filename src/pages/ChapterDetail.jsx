@@ -65,9 +65,22 @@ const ChapterDetail = () => {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(new Set());
 
+  // Helper function to get translated chapter
+  const getTranslatedChapter = (chapter) => {
+    if (!chapter) return null;
+    const translationKey = `chapters.chapter${chapter.id}`;
+    return {
+      ...chapter,
+      title: t(`${translationKey}.title`, { defaultValue: chapter.title }),
+      summary: t(`${translationKey}.summary`, { defaultValue: chapter.summary }),
+      takeaway: t(`${translationKey}.takeaway`, { defaultValue: chapter.takeaway })
+    };
+  };
+
   const chapter = useMemo(() => {
-    return chapters.find((c) => String(c.id) === String(id));
-  }, [id]);
+    const foundChapter = chapters.find((c) => String(c.id) === String(id));
+    return getTranslatedChapter(foundChapter);
+  }, [id, t]);
 
   if (!chapter) {
     return (
@@ -93,9 +106,9 @@ const ChapterDetail = () => {
           {/* Hero header */}
           <div className="mb-10 text-center">
             <span className="inline-block px-3 py-1 bg-bitcoin-orange text-white rounded-full text-xs sm:text-sm font-bold mb-3">{t('chapterDetail.chapter')} {chapter.id}</span>
-            <h2 className="font-title font-bold text-2xl sm:text-3xl lg:text-4xl text-title-color mb-2">{chapter.title}</h2>
+            <h2 className="font-title font-bold text-2xl sm:text-3xl lg:text-4xl text-title-color mb-2">{chapter?.title}</h2>
             <div className="bg-white/70 backdrop-blur rounded-xl shadow p-5 sm:p-6 lg:p-8">
-              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter.summary}</p>
+              <p className="font-description text-description-color text-base sm:text-lg lg:text-xl break-words overflow-visible" style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}>{chapter?.summary}</p>
             </div>
           </div>
 

@@ -66,4 +66,3 @@ const LanguageSwitcher = () => {
 };
 
 export default LanguageSwitcher;
-

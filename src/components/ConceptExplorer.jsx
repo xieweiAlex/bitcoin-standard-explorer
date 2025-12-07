@@ -8,20 +8,38 @@ const ConceptExplorer = () => {
   const [selectedConcept, setSelectedConcept] = useState(null);
   const [hoveredConcept, setHoveredConcept] = useState(null);
 
+  // Helper function to convert kebab-case to camelCase
+  const toCamelCase = (str) => {
+    return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+  };
+
+  // Helper function to get translated concept
+  const getTranslatedConcept = (concept) => {
+    const translationKey = toCamelCase(concept.id);
+    const translationPath = `concepts.${translationKey}`;
+    
+    return {
+      ...concept,
+      title: t(`${translationPath}.title`, { defaultValue: concept.title }),
+      tooltip: t(`${translationPath}.tooltip`, { defaultValue: concept.tooltip }),
+      explanation: t(`${translationPath}.explanation`, { defaultValue: concept.explanation })
+    };
+  };
+
   const hardMoneyPath = concepts.filter(c => 
     ['hard-money', 'low-time-preference', 'capital-accumulation', 'civilization-growth'].includes(c.id)
-  );
+  ).map(getTranslatedConcept);
   
   const softMoneyPath = concepts.filter(c => 
     ['soft-money', 'inflation', 'high-time-preference', 'economic-decay'].includes(c.id)
-  );
+  ).map(getTranslatedConcept);
   
   const bitcoinPath = concepts.filter(c => 
     ['bitcoin', 'digital-hard-money', 'global-economic-coordination'].includes(c.id)
-  );
+  ).map(getTranslatedConcept);
 
   const handleNodeClick = (concept) => {
-    setSelectedConcept(concept);
+    setSelectedConcept(getTranslatedConcept(concept));
   };
 
   return (
@@ -92,7 +110,7 @@ const ConceptExplorer = () => {
                   <h4 className="font-bold text-sm uppercase text-gray-700 mb-2">{t('concepts.relatedConcepts')}</h4>
                   <div className="flex flex-wrap gap-2 justify-center">
                     {selectedConcept.connections.map(connectionId => {
-                      const connectedConcept = concepts.find(c => c.id === connectionId);
+                      const connectedConcept = getTranslatedConcept(concepts.find(c => c.id === connectionId));
                       return (
                         <button
                           key={connectionId}
@@ -115,6 +133,25 @@ const ConceptExplorer = () => {
 };
 
 const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcept, className = "" }) => {
+  const { t } = useTranslation();
+  
+  // Helper function to convert kebab-case to camelCase
+  const toCamelCase = (str) => {
+    return str.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+  };
+
+  // Helper function to get translated concept
+  const getTranslatedConcept = (concept) => {
+    const translationKey = toCamelCase(concept.id);
+    const translationPath = `concepts.${translationKey}`;
+    
+    return {
+      ...concept,
+      title: t(`${translationPath}.title`, { defaultValue: concept.title }),
+      tooltip: t(`${translationPath}.tooltip`, { defaultValue: concept.tooltip }),
+      explanation: t(`${translationPath}.explanation`, { defaultValue: concept.explanation })
+    };
+  };
   return (
     <div className={`flex flex-col md:flex-row justify-center items-center relative ${className}`}>
       {/* Connecting Line */}
@@ -124,6 +161,7 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
       {/* Concept Nodes */}
       <div className="flex flex-col md:flex-row justify-center items-center w-full gap-8 md:gap-4 relative">
       {concepts.map((concept, index) => {
+        const translatedConcept = getTranslatedConcept(concept);
         const isHovered = hoveredConcept?.id === concept.id;
         return (
           <motion.div
@@ -136,7 +174,7 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
           >
             <div 
               className="relative"
-              onMouseEnter={() => onNodeHover(concept)}
+              onMouseEnter={() => onNodeHover(translatedConcept)}
               onMouseLeave={() => onNodeHover(null)}
             >
               <button
@@ -144,7 +182,7 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
                 className={`min-w-32 min-h-32 w-auto h-auto px-4 py-4 rounded-full flex items-center justify-center text-white font-medium text-center p-2 transition-all duration-300 ${pathColor} hover:shadow-lg transform hover:scale-105 break-words overflow-visible`}
                 style={{ maxWidth: '200px', wordWrap: 'break-word' }}
               >
-                <span className="text-sm leading-tight">{concept.title}</span>
+                <span className="text-sm leading-tight">{translatedConcept.title}</span>
               </button>
               
               {/* Tooltip */}
@@ -157,7 +195,7 @@ const FlowPath = ({ concepts, pathColor, onNodeClick, onNodeHover, hoveredConcep
                     zIndex: 100
                   }}
                 >
-                  {concept.tooltip}
+                  {translatedConcept.tooltip}
                 </div>
               )}
             </div>

@@ -14,12 +14,117 @@
     "title": "Kapitel-Zusammenfassungen",
     "chapter": "Kapitel",
     "clickToView": "Klicken Sie für Details →",
-    "takeawayInsight": "Wesentliche Erkenntnis"
+    "takeawayInsight": "Wesentliche Erkenntnis",
+    "chapter1": {
+      "title": "Geld",
+      "summary": "Das erste Kapitel führt das Konzept des Geldes und seine Entwicklung im Laufe der Geschichte ein. Ammous erklärt, dass Geld ein Werkzeug ist, um wirtschaftlichen Wert über Zeit und Raum zu bewegen. Die wichtigste Eigenschaft von Geld ist seine Härte - die Schwierigkeit, mehr davon zu produzieren. In der Geschichte haben Gesellschaften, die hartes Geld (schwer zu produzieren) verwendeten, prosperiert, während diejenigen, die leichtes Geld verwendeten, zurückgingen.",
+      "takeaway": "Solides Geld ist wesentlich, damit die Zivilisation gedeiht, da es niedrige Zeitpräferenz und Kapitalakkumulation fördert."
+    },
+    "chapter2": {
+      "title": "Primitives Geld",
+      "summary": "Dieses Kapitel untersucht, wie frühe Formen von Geld aus Tauschsystemen entstanden. Verschiedene Objekte dienten in verschiedenen Gesellschaften als Geld, aber sie alle teilten bestimmte Eigenschaften: Haltbarkeit, Teilbarkeit, Transportfähigkeit und vor allem Verkäuflichkeit (Leichtigkeit des Verkaufs). Die härtesten Formen von primitivem Geld waren diejenigen, die am schwierigsten zu produzieren waren, wie Muscheln und Perlen.",
+      "takeaway": "Geld entsteht natürlich in Gesellschaften als das am meisten verkäufliche Gut, und das härteste Geld setzt sich tendenziell im Laufe der Zeit durch."
+    },
+    "chapter3": {
+      "title": "Geldmetalle",
+      "summary": "Metalle wurden aufgrund ihrer überlegenen physikalischen Eigenschaften zur dominierenden Form von Geld. Gold wurde zum wichtigsten Geldmetall aufgrund seiner extremen Knappheit und Schwierigkeit der Produktion. Der Goldstandard ermöglichte beispielloses wirtschaftliches Wachstum und Stabilität im 19. Jahrhundert, da er fiskalische Disziplin bei Regierungen auferlegte und Sparen und Kapitalakkumulation förderte.",
+      "takeaway": "Gold wurde zum globalen Standard für Geld aufgrund seines unübertroffenen Bestand-zu-Fluss-Verhältnisses, was es zur härtesten verfügbaren Form von Geld macht."
+    },
+    "chapter4": {
+      "title": "Staatsgeld",
+      "summary": "Das 20. Jahrhundert sah den Übergang von solidem Geld (Gold) zu staatlich kontrollierten Fiat-Währungen. Dieser Übergang begann mit dem Ersten Weltkrieg, als Regierungen Kriegsanstrengungen finanzieren mussten. Das Bretton-Woods-System (1944-1971) versuchte, die Disziplin des Goldes aufrechtzuerhalten, während es Regierungen monetäre Kontrolle gab, scheiterte aber letztendlich, als die USA 1971 die Goldkonvertibilität aufgaben.",
+      "takeaway": "Der Übergang von Gold zu Fiat-Währung entfernte natürliche Beschränkungen für Staatsausgaben und monetäre Expansion."
+    },
+    "chapter5": {
+      "title": "Geld und Zeitpräferenz",
+      "summary": "Dieses zentrale Kapitel erklärt, wie die Art des Geldes, die eine Gesellschaft verwendet, die Zeitpräferenz beeinflusst - das Ausmaß, in dem Menschen gegenwärtigen Konsum gegenüber zukünftigem Konsum bevorzugen. Hartes Geld (wie Gold oder Bitcoin) fördert niedrige Zeitpräferenz, was bedeutet, dass Menschen eher bereit sind, Befriedigung zu verzögern und für die Zukunft zu investieren. Weiches Geld (wie Fiat-Währungen) fördert hohe Zeitpräferenz und gegenwärtigen Konsum.",
+      "takeaway": "Die Härte von Geld beeinflusst direkt die gesellschaftliche Zeitpräferenz, die alles von persönlichen Entscheidungen bis zum Fortschritt der Zivilisation prägt."
+    },
+    "chapter6": {
+      "title": "Das Informationssystem des Kapitalismus",
+      "summary": "Solides Geld dient als genaues Informationssystem für die Kapitalallokation in freien Märkten. Preissignale in einem harten Geldsystem spiegeln echte Verbraucherpräferenzen und Ressourcenknappheit wider. Unter inflationären Fiat-Systemen wird dieser Signalmechanismus verzerrt, was zu Boom-Bust-Zyklen und Fehlinvestitionen führt.",
+      "takeaway": "Solides Geld ist wesentlich, damit der Kapitalismus richtig funktioniert, da es genaue Preissignale für effiziente Ressourcenallokation liefert."
+    },
+    "chapter7": {
+      "title": "Solides Geld und individuelle Freiheit",
+      "summary": "Dieses Kapitel untersucht, wie solides Geld die Staatsmacht begrenzt und individuelle Freiheit stärkt. Wenn Regierungen die Geldschöpfung kontrollieren, können sie Aktivitäten ohne direkte Besteuerung finanzieren und sich über das hinaus ausdehnen, was Bürger freiwillig unterstützen würden. Solides Geld wirkt als Kontrolle gegen Staatswachstum und schützt individuelle Eigentumsrechte.",
+      "takeaway": "Solides Geld ist eine Voraussetzung für individuelle Freiheit, da es die Fähigkeit der Regierung begrenzt, Vermögen durch Inflation zu enteignen."
+    },
+    "chapter8": {
+      "title": "Digitales Geld",
+      "summary": "Die letzten Kapitel untersuchen Bitcoin als die erste wirklich digitale Form von solidem Geld. Bitcoin löst das Doppelausgabenproblem durch seinen dezentralen Konsensmechanismus und hat einen perfekt vorhersehbaren Angebotsplan. Seine digitale Natur gibt ihm Vorteile gegenüber Gold in Bezug auf Überprüfbarkeit und Übertragbarkeit, während es die entscheidende Eigenschaft der Härte beibehält.",
+      "takeaway": "Bitcoin repräsentiert die erste digitale Umsetzung von Prinzipien soliden Geldes und kombiniert Golds Knappheit mit überlegener Übertragbarkeit und Teilbarkeit."
+    },
+    "chapter9": {
+      "title": "Wofür ist Bitcoin gut?",
+      "summary": "Dieses Kapitel analysiert Bitcoins potenzielle Anwendungsfälle. Sein primärer Wertversprechen ist als Wertaufbewahrungsmittel und Abrechnungsnetzwerk, anstatt für kleine tägliche Transaktionen. Bitcoin bietet ein neutrales, grenzenloses Währungssystem außerhalb der staatlichen Kontrolle, was es besonders wertvoll für internationale Abrechnungen, Vermögenserhaltung und als Schutz vor finanzieller Repression macht.",
+      "takeaway": "Bitcoins wichtigste Funktion ist als digitales solides Geld - ein Wertaufbewahrungsmittel frei von staatlicher Kontrolle und Entwertung."
+    },
+    "chapter10": {
+      "title": "Bitcoin-Fragen",
+      "summary": "Das letzte Kapitel behandelt häufige Kritikpunkte und Fragen zu Bitcoin. Es erklärt, warum Bitcoins Energieverbrauch durch sein Wertversprechen gerechtfertigt ist, warum sein festes Angebot nicht problematisch ist und wie es sich im Vergleich zu anderen Kryptowährungen verhält. Ammous argumentiert, dass Bitcoins First-Mover-Vorteil und Netzwerkeffekte es unwahrscheinlich machen, dass es von Konkurrenten ersetzt wird.",
+      "takeaway": "Bitcoins einzigartige Kombination von Eigenschaften macht es zur einzigen wirklich soliden digitalen Währung mit erheblichen Vorteilen gegenüber sowohl traditionellen Währungen als auch anderen Kryptowährungen."
+    }
   },
   "concepts": {
     "title": "Konzept-Explorer",
     "description": "Erkunden Sie die Schlüsselkonzepte aus The Bitcoin Standard und wie sie miteinander zusammenhängen. Bewegen Sie die Maus über die Knoten, um kurze Beschreibungen zu sehen, und klicken Sie für detailliertere Erklärungen.",
-    "relatedConcepts": "Verwandte Konzepte"
+    "relatedConcepts": "Verwandte Konzepte",
+    "hardMoney": {
+      "title": "Hartes Geld",
+      "tooltip": "Geld, das schwer zu produzieren oder zu inflationieren ist",
+      "explanation": "Hartes Geld ist Währung, die schwer zu produzieren oder zu inflationieren ist. In der Geschichte haben Gesellschaften, die hartes Geld (wie Gold) verwendeten, prosperiert, weil es Sparen und Investitionen fördert. Bitcoin ist das härteste Geld, das je geschaffen wurde, aufgrund seines festen Angebots von 21 Millionen Münzen."
+    },
+    "lowTimePreference": {
+      "title": "Niedrige Zeitpräferenz",
+      "tooltip": "Zukünftige Belohnungen gegenüber sofortiger Befriedigung bevorzugen",
+      "explanation": "Niedrige Zeitpräferenz bedeutet, zukünftige Belohnungen gegenüber sofortiger Befriedigung zu bevorzugen. Wenn Geld seinen Wert behält, sind Menschen eher bereit, langfristig zu sparen und zu investieren, anstatt sofort zu konsumieren. Diese Denkweise ist wesentlich für den Aufbau von Zivilisation und technologischem Fortschritt."
+    },
+    "capitalAccumulation": {
+      "title": "Kapitalakkumulation",
+      "tooltip": "Aufbau produktiver Ressourcen durch Sparen und Investitionen",
+      "explanation": "Kapitalakkumulation ist der Prozess des Aufbaus produktiver Ressourcen durch Sparen und Investitionen. Wenn Menschen unter einem harten Geldstandard sparen, können diese Ersparnisse in produktive Investitionen geleitet werden, die den Wohlstand und die produktive Kapazität der Gesellschaft im Laufe der Zeit erhöhen."
+    },
+    "civilizationGrowth": {
+      "title": "Zivilisationswachstum",
+      "tooltip": "Fortschritt der Gesellschaft durch Innovation und Wohlstand",
+      "explanation": "Zivilisationswachstum bezieht sich auf den Fortschritt der menschlichen Gesellschaft durch technologische Innovation, kulturelle Entwicklung und gesteigerten Wohlstand. Hartes Geld und niedrige Zeitpräferenz schaffen die Bedingungen für Kapitalakkumulation, die die Ressourcen für langfristige Projekte bereitstellt, die die Zivilisation voranbringen."
+    },
+    "softMoney": {
+      "title": "Weiches Geld",
+      "tooltip": "Geld, das leicht zu produzieren oder zu inflationieren ist",
+      "explanation": "Weiches Geld ist Währung, die leicht zu produzieren oder zu inflationieren ist. Fiat-Währungen, die von Regierungen kontrolliert werden, sind Beispiele für weiches Geld, da ihr Angebot nach Belieben erhöht werden kann. Weiches Geld neigt dazu, im Laufe der Zeit an Wert zu verlieren, was Sparen entmutigt und Konsum fördert."
+    },
+    "inflation": {
+      "title": "Inflation",
+      "tooltip": "Ausweitung der Geldmenge, die zu steigenden Preisen führt",
+      "explanation": "Inflation ist die Ausweitung der Geldmenge, die zu steigenden Preisen und sinkender Kaufkraft führt. Wenn Geld leicht zu schaffen ist, neigen Behörden dazu, sein Angebot zu erhöhen, was Inflation verursacht. Dies zerstört Ersparnisse und zwingt Menschen, Renditen zu suchen, die die Inflation übertreffen, anstatt sich auf produktive Investitionen zu konzentrieren."
+    },
+    "highTimePreference": {
+      "title": "Hohe Zeitpräferenz",
+      "tooltip": "Sofortige Befriedigung gegenüber zukünftigen Belohnungen bevorzugen",
+      "explanation": "Hohe Zeitpräferenz bedeutet, sofortige Befriedigung gegenüber zukünftigen Belohnungen zu bevorzugen. Wenn Geld durch Inflation an Wert verliert, werden Menschen dazu angeregt, schnell auszugeben, anstatt zu sparen. Dieses kurzfristige Denken führt zu Konsum statt Investition und untergräbt langfristige Planung."
+    },
+    "economicDecay": {
+      "title": "Wirtschaftlicher Verfall",
+      "tooltip": "Verschlechterung von Wirtschaftssystemen durch Fehlinvestitionen",
+      "explanation": "Wirtschaftlicher Verfall ist die Verschlechterung von Wirtschaftssystemen, gekennzeichnet durch Fehlinvestitionen, Schuldenanhäufung und sinkende Produktivität. Wenn hohe Zeitpräferenz die Gesellschaft dominiert, werden Ressourcen konsumiert statt produktiv investiert, was zu wirtschaftlicher Stagnation und Niedergang führt."
+    },
+    "bitcoin": {
+      "title": "Bitcoin",
+      "tooltip": "Dezentrale digitale Währung mit festem Angebot",
+      "explanation": "Bitcoin ist die erste und sicherste dezentrale digitale Währung, die 2009 geschaffen wurde. Sie hat ein festes Angebot von 21 Millionen Münzen, was sie zum härtesten Geld macht, das je geschaffen wurde. Bitcoin kombiniert die Knappheitseigenschaften von Gold mit den Übertragbarkeitsvorteilen digitaler Informationen."
+    },
+    "digitalHardMoney": {
+      "title": "Digitales Hartes Geld",
+      "tooltip": "Knappe digitale Währung, die gegen Entwertung resistent ist",
+      "explanation": "Digitales hartes Geld ist Währung, die in digitaler Form existiert und gleichzeitig die Eigenschaften von hartem Geld beibehält, insbesondere Knappheit und Widerstandsfähigkeit gegen Entwertung. Bitcoin hat diese Kategorie durch die Lösung des Doppelausgabenproblems mittels seiner Blockchain-Technologie gepioniert und erstmals digitale Knappheit geschaffen."
+    },
+    "globalEconomicCoordination": {
+      "title": "Globale Wirtschaftskoordination",
+      "tooltip": "Weltweite wirtschaftliche Zusammenarbeit durch neutrales Geld",
+      "explanation": "Globale Wirtschaftskoordination bezieht sich auf die Fähigkeit von Wirtschaftsakteuren weltweit, Aktivitäten mit einem gemeinsamen Währungsstandard zu koordinieren. Bitcoin ermöglicht dies durch die Bereitstellung eines neutralen, grenzenlosen Währungssystems, das nicht von einer Regierung oder einem Unternehmen kontrolliert wird und möglicherweise effizienteren globalen Handel und Investitionen ermöglicht."
+    }
   },
   "knowledgeCheck": {
     "title": "Wissensprüfung",
@@ -61,4 +166,3 @@
     "german": "Deutsch"
   }
 }
-
