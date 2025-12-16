@@ -1,5 +1,9 @@
-import { chapter4KeyIdeas } from './chapterKeyIdeas/chapter4';
+import { chapter1KeyIdeas } from './chapterKeyIdeas/chapter1';
+import { chapter2KeyIdeas } from './chapterKeyIdeas/chapter2';
 import { chapter3KeyIdeas } from './chapterKeyIdeas/chapter3';
+import { chapter4KeyIdeas } from './chapterKeyIdeas/chapter4';
+import { chapter5KeyIdeas } from './chapterKeyIdeas/chapter5';
+import { chapter6KeyIdeas } from './chapterKeyIdeas/chapter6';
 
 export const chapters = [
   {
@@ -9,7 +13,8 @@ export const chapters = [
     quotes: [
       "History shows it is not possible to insulate yourself from the consequences of others holding money that is harder than yours."
     ],
-    takeaway: "Sound money is essential for civilization to flourish, as it encourages low time preference and capital accumulation."
+    takeaway: "Sound money is essential for civilization to flourish, as it encourages low time preference and capital accumulation.",
+    keyIdeas: chapter1KeyIdeas
   },
   {
     id: 2,
@@ -18,7 +23,8 @@ export const chapters = [
     quotes: [
       "For something to assume a monetary role, it has to be costly to produce, otherwise the temptation to make money on the cheap will destroy the wealth of the savers, and destroy the incentive anyone has to save in this medium."
     ],
-    takeaway: "Money naturally emerges in societies as the most salable good, and the hardest money tends to win out over time."
+    takeaway: "Money naturally emerges in societies as the most salable good, and the hardest money tends to win out over time.",
+    keyIdeas: chapter2KeyIdeas
   },
   {
     id: 3,
@@ -47,7 +53,8 @@ export const chapters = [
     quotes: [
       "Sound money is chosen freely on the market for its salability, because it holds value across time, because it can transfer value effectively across space, and because it can be divided and grouped into small and large scales."
     ],
-    takeaway: "The hardness of money directly influences societal time preference, which shapes everything from personal choices to civilization's advancement."
+    takeaway: "The hardness of money directly influences societal time preference, which shapes everything from personal choices to civilization's advancement.",
+    keyIdeas: chapter5KeyIdeas
   },
   {
     id: 6,
@@ -56,7 +63,8 @@ export const chapters = [
     quotes: [
       "Capitalism is what happens when people drop their time preference, defer immediate gratification, and invest in the future."
     ],
-    takeaway: "Sound money is essential for capitalism to function properly as it provides accurate price signals for efficient resource allocation."
+    takeaway: "Sound money is essential for capitalism to function properly as it provides accurate price signals for efficient resource allocation.",
+    keyIdeas: chapter6KeyIdeas
   },
   {
     id: 7,
